@@ -4,29 +4,28 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Pull the code from GitHub
-                git url: 'https://github.com/masked-devil/jenkins-task5', branch: 'main'
+                // Clone the repository from GitHub.
+                git url: 'https://github.com/masked-devil/jenkins-task5', branch: 'master'
             }
         }
         
         stage('Build') {
             steps {
-                // Compile the Java program
-                sh 'javac src/TimestampPrinter.java
-'
+                // Compile the Java program. Ensure the command is correct.
+                sh 'javac src/TimestampPrinter.java'
             }
         }
         
         stage('Run') {
             steps {
-                // Run the Java program
-                sh 'java TimestampPrinter'
+                // Run the Java program. Adjust the classpath if needed.
+                sh 'java -cp src TimestampPrinter'
             }
         }
     }
     
     triggers {
-        // This trigger checks for changes periodically (every minute)
+        // Poll for SCM changes (you may also use GitHub webhooks)
         pollSCM('* * * * *')
     }
 }
