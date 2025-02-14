@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clone the repository from GitHub.
-                git url: 'https://github.com/masked-devil/jenkins-task5', branch: 'master'
+                git url: 'https://github.com/masked-devil/jenkins-task5', branch: 'main'
             }
         }
         
