@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pull the code from GitHub
-                git url: 'https://github.com/your-username/java-timestamp-ci.git', branch: 'main'
+                git url: 'https://github.com/masked-devil/jenkins-task5', branch: 'main'
             }
         }
         
