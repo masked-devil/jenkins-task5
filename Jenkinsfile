@@ -12,7 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                 // Compile the Java program
-                sh 'javac TimestampPrinter.java'
+                sh 'javac src/TimestampPrinter.java
+'
             }
         }
         
